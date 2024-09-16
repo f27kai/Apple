@@ -1,0 +1,24 @@
+{% include 'header.html' %}
+
+<div style="display: flex; ">
+    <img src="{{ iphone_id.image.url }}" width="600" height="400" alt="{{iphone.image}}">
+    <h1 style="font-size: 24px; color: aquamarine">Марка: {{iphone_id.name}}</h1>
+    <p style="font-size: 18px;">Характеристика: {{ iphone_id.harakter}}</p>
+    <h1 style="font-size: 32px;">Цена: {{ iphone_id.price }} сом</h1>
+</div>
+
+
+<h3>Отзыв</h3>
+
+<ol class="reviews-list">
+    {% for i in iphone_id.iphone.all %}
+    <li class="review-item">
+        <h3>Оценка: {{ i.stars }} звезд</h3>
+        <p>{{ i.text }}</p>
+        <small>Дата отзыва: {{ i.created_at }}</small>
+    </li>
+    {% endfor %}
+</ol>
+
+{% include 'footer.html' %}
+

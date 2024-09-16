@@ -1,0 +1,19 @@
+{% include 'header.html' %}
+
+<a href="{% url 'create_phone_view' %}"><button>Добавить товар</button></a>
+{% for iphone in iphones %}
+<div>
+    <center>
+        <h1 style="font-size: 24px">{{ iphone.name }}</h1>
+        <img src="{{ iphone.image.url }}" width="250" height="300" alt="{{iphone.image}}">
+        <h2 style="font-size: 22px">{{ iphone.created_at }}</h2>
+        <a href="{% url 'details_view' iphone.id %}"><p style="font-size: 18px">Подробнее</p></a>
+        <a href="{% url 'delete_phone_view' iphone.id %}"><p style="font-size: 18px">Удалить</p></a>
+        <a href="{% url 'update_phone_view' iphone.id %}"><p style="font-size: 18px">Изменить</p></a>
+    </center>
+</div>
+
+
+{% endfor %}
+
+{% include 'footer.html' %}

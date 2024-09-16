@@ -1,0 +1,15 @@
+{% include 'header.html' %}
+
+<form class="decor" method="POST" enctype="multipart/form-data">
+    <h3>Изменить данный</h3>
+
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Сохранить</button>
+    <button type="reset">Очистить</button>
+</form>
+
+{% include 'footer.html' %}
+
+

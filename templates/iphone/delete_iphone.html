@@ -1,0 +1,19 @@
+{% include 'header.html' %}
+
+
+<center>
+    <h1>Вы уверенны что хотите удалить продукт?</h1>
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <button type="submit">Да</button>
+        <button><a href="{% url 'list_view' %}">Нет</a></button>
+    </form>
+
+</center>
+
+
+
+
+{% include 'footer.html' %}
